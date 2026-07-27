@@ -9,7 +9,7 @@ const INGREDIENTS = [
       'Pure creamy butter',
       '100% pure honey',
       'Honeycomb',
-      'Pure cane sugar',
+      'Cane sugar',
     ],
     accent: 'var(--gold)',
   },
