@@ -21,7 +21,6 @@ export default function Contact() {
     quantity: '',
     message: '',
   });
-  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -29,13 +28,23 @@ export default function Contact() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
+  const buildWhatsAppUrl = (data: FormData) => {
+    const lines = [
+      `Hi Chef's Table! I'd like to place an order.`,
+      ``,
+      `Name: ${data.name}`,
+      `Phone: ${data.phone}`,
+      `Product: ${data.product}`,
+      `Quantity: ${data.quantity}`,
+      ...(data.message.trim() ? [`Note: ${data.message.trim()}`] : []),
+    ];
+    const text = encodeURIComponent(lines.join('\n'));
+    return `https://api.whatsapp.com/send?phone=9779817257422&text=${text}`;
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const msg = encodeURIComponent(
-      `Hi Chef's Table! I'd like to place an order.\n\nName: ${form.name}\nPhone: ${form.phone}\nProduct: ${form.product}\nQuantity: ${form.quantity}\nMessage: ${form.message}`
-    );
-    window.open(`https://wa.me/9779817257422?text=${msg}`, '_blank');
-    setSubmitted(true);
+    window.location.href = buildWhatsAppUrl(form);
   };
 
   const INPUT_BASE = {
@@ -183,7 +192,7 @@ export default function Contact() {
 
             {/* WhatsApp CTA */}
             <a
-              href="https://wa.me/9779817257422"
+              href={`https://api.whatsapp.com/send?phone=9779817257422&text=${encodeURIComponent("Hi Chef's Table! I'd like to place an order. Could you let me know about availability?")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-12 inline-flex items-center gap-3 px-8 py-4 text-[12px] tracking-[0.12em] uppercase font-semibold transition-all duration-300"
@@ -213,25 +222,7 @@ export default function Contact() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
           >
-            {submitted ? (
-              <div
-                className="flex flex-col items-center justify-center h-full text-center py-20"
-              >
-                <p
-                  className="text-4xl mb-4"
-                  style={{ fontFamily: 'var(--font-script)', color: 'var(--gold)' }}
-                >
-                  Thank you!
-                </p>
-                <p
-                  className="text-base"
-                  style={{ color: 'var(--cream)', opacity: 0.7, fontFamily: 'var(--font-sans)' }}
-                >
-                  Your order request has been sent. We'll be in touch soon.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="ct-name" style={LABEL_STYLE}>Name</label>
                   <input
@@ -322,7 +313,6 @@ export default function Contact() {
                   Submit Order
                 </button>
               </form>
-            )}
           </motion.div>
 
         </div>
