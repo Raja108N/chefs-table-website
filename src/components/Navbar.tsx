@@ -16,7 +16,6 @@ export default function Navbar() {
   const reduce = useReducedMotion();
 
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 40);
     const obs = new IntersectionObserver(
       ([entry]) => setIsScrolled(!entry.isIntersecting),
       { rootMargin: '-40px 0px 0px 0px', threshold: 0 }
