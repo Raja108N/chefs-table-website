@@ -8,8 +8,8 @@ const PRODUCTS = [
     name: 'Honey Comb Butter',
     weight: '250g',
     description:
-      'Creamy butter blended with pure honey and natural honeycomb for a rich, naturally sweet spread.',
-    ingredients: ['Pure creamy butter', '100% pure honey', 'Natural honeycomb', 'Pure cane sugar'],
+      'Creamy butter blended with pure honey and honeycomb for a rich, naturally sweet spread.',
+    ingredients: ['Pure creamy butter', '100% pure honey', 'Honeycomb', 'Pure cane sugar'],
     buttonLabel: 'Discover Honey Comb Butter',
   },
   {
