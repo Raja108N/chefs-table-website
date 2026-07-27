@@ -10,7 +10,7 @@ type FormData = {
   message: string;
 };
 
-const PRODUCTS_OPTIONS = ['Honey Comb Butter 250g', 'Crumpets 500g'];
+const PRODUCTS_OPTIONS = ['Honey Butter 250g', 'Crumpets 500g'];
 
 export default function Contact() {
   const reduce = useReducedMotion();

@@ -161,7 +161,7 @@ export default function Hero() {
             >
               <img
                 src="/hero.jpg"
-                alt="Chef's Table premium Honey Comb Butter and Crumpets arranged on a wooden board"
+                alt="Chef's Table premium Honey Butter and Crumpets arranged on a wooden board"
                 className="w-full h-auto object-cover"
                 style={{ aspectRatio: '4/3', display: 'block' }}
                 loading="eager"

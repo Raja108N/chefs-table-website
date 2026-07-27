@@ -11,13 +11,13 @@ export default function ProductFeature({ variant, onOrderClick }: ProductFeature
 
   const content = isHoney
     ? {
-        label: 'Premium Honey Comb Butter',
+        label: 'Premium Honey Butter',
         headline: ['Pure Honey. Creamy Butter.', 'Naturally Delicious.'],
         body: 'A rich combination of creamy butter, pure honey and honeycomb, carefully prepared for a deliciously smooth and naturally sweet experience.',
         weight: '250g',
-        cta: 'Order Honey Comb Butter',
+        cta: 'Order Honey Butter',
         image: '/honey-butter.jpg',
-        imageAlt: 'Premium Honey Comb Butter in a glass jar with honeycomb and a honey dipper',
+        imageAlt: 'Premium Honey Butter in a glass jar with honeycomb and a honey dipper',
         bg: 'var(--cream-dark)',
         pattern: 'honeycomb-bg',
       }

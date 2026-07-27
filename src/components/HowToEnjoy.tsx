@@ -2,7 +2,7 @@ import { motion, useReducedMotion } from 'motion/react';
 
 const SERVING = [
   {
-    product: 'Honey Comb Butter',
+    product: 'Honey Butter',
     steps: [
       { verb: 'Spread it.', desc: 'Over warm crumpets, toast or fresh bread.' },
       { verb: 'Pair it.', desc: 'With a cup of tea, coffee or fresh fruit.' },
@@ -14,7 +14,7 @@ const SERVING = [
     product: 'Crumpets',
     steps: [
       { verb: 'Toast it.', desc: 'Lightly toast until the edges turn golden.' },
-      { verb: 'Top it.', desc: 'Add honey comb butter, jam or a soft egg.' },
+      { verb: 'Top it.', desc: 'Add Honey Butter, jam or a soft egg.' },
       { verb: 'Enjoy it.', desc: 'Best served warm, any time of day.' },
     ],
     accent: 'var(--green)',
@@ -41,7 +41,7 @@ export default function HowToEnjoy() {
         >
           <img
             src="/lifestyle.jpg"
-            alt="Breakfast spread with crumpets topped with honeycomb butter, honey and morning tea"
+            alt="Breakfast spread with crumpets topped with honey butter, honey and morning tea"
             className="w-full object-cover"
             style={{ height: '520px', objectPosition: 'center 40%' }}
             loading="lazy"

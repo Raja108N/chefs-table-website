@@ -3,7 +3,7 @@ import { Leaf } from '@phosphor-icons/react';
 
 const INGREDIENTS = [
   {
-    product: 'Honey Comb Butter',
+    product: 'Honey Butter',
     weight: '250g',
     items: [
       'Pure creamy butter',
